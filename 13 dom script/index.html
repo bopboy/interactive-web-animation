@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Script</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="characters">
+        <div class="ilbuni a">
+            <img src="./images/ilbuni_0.png" alt="">
+        </div>
+        <div class="ilbuni b">
+            <img src="./images/ilbuni_1.png" alt="">
+        </div>
+        <div class="ilbuni c">
+            <img src="./images/ilbuni_2.png" alt="">
+        </div>
+    </div>
+    <div class="ilbuni d">
+        <img src="./images/ilbuni_3.png" alt="">
+    </div>
+    <script>
+        const ilbuni = document.querySelector('.ilbuni')
+        // ilbuni.classList.add('special')
+        // ilbuni.classList.remove('special')
+        ilbuni.classList.toggle('special')
+    </script>
+</body>
+
+</html>
