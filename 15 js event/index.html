@@ -6,47 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Script</title>
+    <link rel="stylesheet" href="../reset.css">
     <link rel="stylesheet" href="./css/style.css">
-    <!-- <script>
-        // window.addEventListener('load', function () {
-        window.addEventListener('DOMContentLoaded', function () {
-            const ilbuni = document.querySelector('.ilbuni.c')
-            console.log(ilbuni)
-            function clickIlbuniHandler() {
-                ilbuni.classList.toggle('special')
-            }
-            ilbuni.addEventListener('click', clickIlbuniHandler)
-        })
-    </script> -->
+
 </head>
 
 <body>
-    <div class="characters">
-        <div class="ilbuni a">
-            <img src="./images/ilbuni_0.png" alt="">
-        </div>
-        <div class="ilbuni b">
-            <img src="./images/ilbuni_1.png" alt="">
-        </div>
-        <div class="ilbuni c">
-            <img src="./images/ilbuni_2.png" alt="">
-        </div>
-        <div class="ilbuni d">
-            <img src="./images/ilbuni_3.png" alt="">
-        </div>
+    <div class="stage">
+        <div class="ilbuni a"></div>
+        <div class="ilbuni b"></div>
+        <div class="ilbuni c"></div>
     </div>
     <script>
-        (function ilbun() {
-            const characters = document.querySelector('.characters')
-            const clickIlbuniHandler = function (e) {
+        (function () {
+            const ilbuniGroup = document.querySelectorAll('.ilbuni')
+            const stage = document.querySelector('.stage')
+            // console.log(ilbuniGroup)
+            function clickHandler(e) {
                 // console.log(this)
-                // console.log(e.currentTarget)
-                // this 나 currentTarget 은 현재 이벤트가 등록된 객체를 가리킨다.
-                console.log(e.target)
-                // e.targer 은 클릭한 요소를 가리킨다
+                // stage.removeChild(this)
+                this.parentNode.removeChild(this)
             }
-            characters.addEventListener('click', clickIlbuniHandler)
-
+            for (let i = 0; i < ilbuniGroup.length; i++) {
+                ilbuniGroup[i].addEventListener('click', clickHandler)
+            }
         })()
     </script>
 </body>
