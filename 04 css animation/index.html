@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <style>
+        @keyframes sample-ani {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                background: red;
+                transform: translate(500px, 0);
+            }
+
+            100% {
+                transform: translate(400px, 200px);
+            }
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            background: #fff000;
+            animation: sample-ani 2s linear infinite alternate;
+            /* animation: sample-ani 2s linear infinite alternate-reverse; */
+            /* animation: sample-ani 2s linear forwards; */
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes spaceship-ani {
+            to {
+                background-position: -2550px 0;
+            }
+        }
+
+        .space {
+            width: 400px;
+            height: 400px;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spaceship {
+            width: 150px;
+            height: 150px;
+            background: url('./images/sprite_spaceship.png') no-repeat 0 0 / auto 150px;
+            animation: spaceship-ani 2s infinite steps(17);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animation</h1>
+    <div class="box">BOX</div>
+    <div class="space">
+        <div class="spaceship"></div>
+    </div>
+</body>
+
+</html>
