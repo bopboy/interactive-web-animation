@@ -39,6 +39,10 @@
             height: 100%;
             border-radius: 0.5rem;
             font-size: 1.5rem;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            /* 사파리 (webkit 기반), 모질라, 오페라 대응 */
             backface-visibility: hidden;
         }
 
