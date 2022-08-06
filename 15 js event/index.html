@@ -31,17 +31,21 @@
         <div class="ilbuni c">
             <img src="./images/ilbuni_2.png" alt="">
         </div>
-    </div>
-    <div class="ilbuni d">
-        <img src="./images/ilbuni_3.png" alt="">
+        <div class="ilbuni d">
+            <img src="./images/ilbuni_3.png" alt="">
+        </div>
     </div>
     <script>
         (function ilbun() {
-            const ilbuni = document.querySelector('.ilbuni.c')
-            const clickIlbuniHandler = function () {
-                ilbuni.classList.toggle('special')
+            const characters = document.querySelector('.characters')
+            const clickIlbuniHandler = function (e) {
+                // console.log(this)
+                // console.log(e.currentTarget)
+                // this 나 currentTarget 은 현재 이벤트가 등록된 객체를 가리킨다.
+                console.log(e.target)
+                // e.targer 은 클릭한 요소를 가리킨다
             }
-            ilbuni.addEventListener('click', clickIlbuniHandler)
+            characters.addEventListener('click', clickIlbuniHandler)
 
         })()
     </script>
