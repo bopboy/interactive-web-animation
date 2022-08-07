@@ -117,10 +117,18 @@
     <script>
         (function () {
             const stage = document.querySelector('.stage')
+            let currentItem
+
             function doorHandler(e) {
                 const target = e.target
+
+                // const currentItem = document.querySelector('.door-opened')
+                if (currentItem)
+                    currentItem.classList.remove('door-opened')
+
                 if (target.classList.contains('door-body'))
                     target.parentNode.classList.add('door-opened')
+                currentItem = target.parentNode
             }
             stage.addEventListener('click', doorHandler)
         })()
