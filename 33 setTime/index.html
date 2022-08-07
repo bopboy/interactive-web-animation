@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTime</title>
+    <style>
+        .btn {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn">취소</button>
+    <script>
+        const btn = document.querySelector('.btn')
+        console.log('start')
+        // setTimeout(function () {
+        //     console.log('setTimeout')
+        // }, 1000)
+        let id
+        let n = 0
+        function sample() {
+            n++
+            // console.log('after 1s: sample')
+            console.log(n)
+            if (n > 200) return
+            id = requestAnimationFrame(sample)
+        }
+        sample()
+        // id = setTimeout(sample, 2000)
+        // id = setInterval(sample, 1000 / 60)
+        console.log(id)
+        btn.addEventListener('click', function () {
+            // clearTimeout(id)
+            // clearInterval(id)
+            cancelAnimationFrame(id)
+        })
+        console.log('end')
+    </script>
+</body>
+
+</html>
