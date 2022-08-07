@@ -19,17 +19,12 @@
     </div>
     <script>
         (function () {
-            const ilbuniGroup = document.querySelectorAll('.ilbuni')
             const stage = document.querySelector('.stage')
-            // console.log(ilbuniGroup)
             function clickHandler(e) {
-                // console.log(this)
-                // stage.removeChild(this)
-                this.parentNode.removeChild(this)
+                if (e.target.classList.contains('ilbuni'))
+                    stage.removeChild(e.target)
             }
-            for (let i = 0; i < ilbuniGroup.length; i++) {
-                ilbuniGroup[i].addEventListener('click', clickHandler)
-            }
+            stage.addEventListener('click', clickHandler)
         })()
     </script>
 </body>
