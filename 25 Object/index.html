@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <h1>Object</h1>
+    <script>
+        // const person = {}
+        // person.name = '일분이'
+        // person.age = 10
+        // console.log(person)
+        // person.introduce = function () {
+        //     console.log('안녕, 난 일분이야. 나이는 10살')
+        // }
+        // person.introduce()
+        const person = {
+            nickname: '일분이',
+            age: 10,
+            introduce: function () {
+                // console.log('안녕, 난 일분이야. 나이는 10살')
+                console.log(`안녕, 난 ${this.nickname}야. 나이는 ${this.age}살`)
+            }
+        }
+        // console.log(person.name)
+        // person.introduce()
+        const person2 = {
+            nickname: '이분이',
+            age: 8,
+            introduce: function () {
+                // console.log('안녕, 난 이분이야. 나이는 8살')
+                console.log(`안녕, 난 ${this.nickname}야. 나이는 ${this.age}살`)
+            }
+        }
+        person.introduce()
+        person2.introduce()
+    </script>
+</body>
+
+</html>
