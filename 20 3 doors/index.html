@@ -83,11 +83,11 @@
             background: rgba(0, 0, 255, 0.7);
         }
 
-        .door:hover .door-body {
+        .door-opened .door-body {
             transform: perspective(800px) rotateY(-110deg);
         }
 
-        .door:hover .ilbuni {
+        .door-opened .ilbuni {
             transform: translate3d(0, 0, 0);
         }
     </style>
@@ -114,6 +114,17 @@
             <div class="door-body"></div>
         </div>
     </div>
+    <script>
+        (function () {
+            const stage = document.querySelector('.stage')
+            function doorHandler(e) {
+                const target = e.target
+                if (target.classList.contains('door-body'))
+                    target.parentNode.classList.add('door-opened')
+            }
+            stage.addEventListener('click', doorHandler)
+        })()
+    </script>
 </body>
 
 </html>
