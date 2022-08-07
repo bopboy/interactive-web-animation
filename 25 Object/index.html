@@ -6,22 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object</title>
+    <style>
+        .card {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 3rem;
+            font-weight: 900;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Object</h1>
     <script>
-        function Person(nickname, age) {
-            this.nickname = nickname
-            this.age = age
-            this.introduce = function () {
-                console.log(`안녕, 난 ${this.nickname}야. 나이는 ${this.age}살`)
-            }
+        // function Person(nickname, age) {
+        //     this.nickname = nickname
+        //     this.age = age
+        // }
+        // Person.prototype.introduce = function () {
+        //     console.log(`안녕, 난 ${this.nickname}야. 나이는 ${this.age}살`)
+        // }
+        // const person1 = new Person('일분이', 10)
+        // const person2 = new Person('이분이', 8)
+        // person1.introduce()
+        // person2.introduce()
+        function Card(num, color) {
+            this.num = num
+            this.color = color
+            this.init()
         }
-        const person1 = new Person('일분이', 10)
-        const person2 = new Person('이분이', 8)
-        person1.introduce()
-        person2.introduce()
+        // Card.prototype.width = 100
+        // Card.prototype.height = 150
+
+        Card.prototype = {
+            constructor: Card,
+            init: function () {
+                const mainElem = document.createElement('div')
+                mainElem.style.color = this.color
+                mainElem.innerHTML = this.num
+                mainElem.classList.add('card')
+                document.body.appendChild(mainElem)
+            }
+
+        }
+
+        const card1 = new Card(1, 'green')
+        const card2 = new Card(7, 'blue')
+
+        console.log(card1)
+        console.log(card2)
     </script>
 </body>
 
