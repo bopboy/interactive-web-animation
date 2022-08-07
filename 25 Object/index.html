@@ -11,33 +11,16 @@
 <body>
     <h1>Object</h1>
     <script>
-        // const person = {}
-        // person.name = '일분이'
-        // person.age = 10
-        // console.log(person)
-        // person.introduce = function () {
-        //     console.log('안녕, 난 일분이야. 나이는 10살')
-        // }
-        // person.introduce()
-        const person = {
-            nickname: '일분이',
-            age: 10,
-            introduce: function () {
-                // console.log('안녕, 난 일분이야. 나이는 10살')
+        function Person(nickname, age) {
+            this.nickname = nickname
+            this.age = age
+            this.introduce = function () {
                 console.log(`안녕, 난 ${this.nickname}야. 나이는 ${this.age}살`)
             }
         }
-        // console.log(person.name)
-        // person.introduce()
-        const person2 = {
-            nickname: '이분이',
-            age: 8,
-            introduce: function () {
-                // console.log('안녕, 난 이분이야. 나이는 8살')
-                console.log(`안녕, 난 ${this.nickname}야. 나이는 ${this.age}살`)
-            }
-        }
-        person.introduce()
+        const person1 = new Person('일분이', 10)
+        const person2 = new Person('이분이', 8)
+        person1.introduce()
         person2.introduce()
     </script>
 </body>
