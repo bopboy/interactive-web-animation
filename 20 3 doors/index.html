@@ -119,16 +119,24 @@
             const stage = document.querySelector('.stage')
             let currentItem
 
+            function activate(e) {
+                e.classList.add('door-opened')
+                currentItem = e
+            }
+            function inactivate(e) {
+                e.classList.remove('door-opened')
+            }
             function doorHandler(e) {
                 const target = e.target
 
-                // const currentItem = document.querySelector('.door-opened')
                 if (currentItem)
-                    currentItem.classList.remove('door-opened')
+                    // currentItem.classList.remove('door-opened')
+                    inactivate(currentItem)
 
                 if (target.classList.contains('door-body'))
-                    target.parentNode.classList.add('door-opened')
-                currentItem = target.parentNode
+                    //     target.parentNode.classList.add('door-opened')
+                    // currentItem = target.parentNode
+                    activate(target.parentNode)
             }
             stage.addEventListener('click', doorHandler)
         })()
