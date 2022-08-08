@@ -80,3 +80,19 @@ body {
     transform: translateZ(-490vw);
     transform-style: preserve-3d;
 }
+
+.progress-bar-con {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 5px;
+    background: #555;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #00a8ff;
+}
