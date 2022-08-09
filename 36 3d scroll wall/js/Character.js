@@ -49,7 +49,7 @@ Character.prototype = {
             self.scrollState = setTimeout(function () {
                 self.scrollState = false
                 self.mainElem.classList.remove('running')
-            }, 500)
+            }, 200)
             if (self.lastScrollTop > pageYOffset) {
                 self.mainElem.setAttribute('data-direction', 'backward')
             } else {
