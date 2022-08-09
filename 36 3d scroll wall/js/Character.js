@@ -46,7 +46,7 @@ Character.prototype = {
             clearTimeout(self.scrollState)
             if (!self.scrollState)
                 self.mainElem.classList.add('running')
-            self.scrollState = this.setTimeout(function () {
+            self.scrollState = setTimeout(function () {
                 self.scrollState = false
                 self.mainElem.classList.remove('running')
             }, 500)
@@ -55,7 +55,7 @@ Character.prototype = {
             } else {
                 self.mainElem.setAttribute('data-direction', 'forward')
             }
-            self.lastScrollTop = this.pageYOffset
+            self.lastScrollTop = pageYOffset
         })
         window.addEventListener('keydown', function (e) {
             if (self.runningState) return

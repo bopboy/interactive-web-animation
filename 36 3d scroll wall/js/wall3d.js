@@ -2,6 +2,7 @@
     const houseElem = document.querySelector('.house')
     const barElem = document.querySelector('.progress-bar')
     const stageElem = document.querySelector('.stage')
+    const selectCharElem = document.querySelector('.select-character')
     let maxScrollValue
     const mousePos = { x: 0, y: 0 }
 
@@ -28,5 +29,9 @@
             xPos: e.clientX / window.innerHeight * 100,
             speed: Math.random() * 0.5 + 0.2
         })
+    })
+    selectCharElem.addEventListener('click', function (e) {
+        const value = e.target.getAttribute('data-char')
+        document.body.setAttribute('data-char', value)
     })
 })()
