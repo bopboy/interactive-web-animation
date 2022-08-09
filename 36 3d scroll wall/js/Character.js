@@ -29,6 +29,12 @@ function Character(info) {
     document.querySelector('.stage').appendChild(this.mainElem)
     this.mainElem.style.left = info.xPos + '%'
     this.scrollState = false
+    this.lastScrollTop = 0
+    this.xPos = info.xPos
+    this.speed = 0.3
+    this.direction
+    this.runningState = false
+    this.rafId
     this.init()
 }
 
@@ -44,6 +50,47 @@ Character.prototype = {
                 self.scrollState = false
                 self.mainElem.classList.remove('running')
             }, 500)
+            if (self.lastScrollTop > pageYOffset) {
+                self.mainElem.setAttribute('data-direction', 'backward')
+            } else {
+                self.mainElem.setAttribute('data-direction', 'forward')
+            }
+            self.lastScrollTop = this.pageYOffset
+        })
+        window.addEventListener('keydown', function (e) {
+            if (self.runningState) return
+
+            if (e.keyCode === 37) {
+                self.direction = 'left'
+                self.mainElem.setAttribute('data-direction', 'left')
+                self.mainElem.classList.add('running')
+                // self.xPos -= self.speed
+                // self.mainElem.style.left = self.xPos + '%'
+                self.run(self)
+                self.runningState = true
+            } else if (e.keyCode === 39) {
+                self.direction = 'right'
+                self.mainElem.setAttribute('data-direction', 'right')
+                self.mainElem.classList.add('running')
+                self.run(self)
+                self.runningState = true
+            }
+        })
+        window.addEventListener('keyup', function (e) {
+            self.mainElem.classList.remove('running')
+            this.cancelAnimationFrame(self.rafId)
+        })
+    },
+    run: function (self) {
+        // const self = this
+        if (self.direction == 'left') {
+            self.xPos -= self.speed
+        } else if (self.direction == 'right') {
+            self.xPos += self.speed
+        }
+        self.mainElem.style.left = self.xPos + '%'
+        self.rafId = requestAnimationFrame(function () {
+            self.run(self)
         })
     }
 }
