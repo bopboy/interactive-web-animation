@@ -25,7 +25,8 @@
     })
     stageElem.addEventListener('click', function (e) {
         new Character({
-            xPos: e.clientX / window.innerHeight * 100
+            xPos: e.clientX / window.innerHeight * 100,
+            speed: Math.random() * 0.5 + 0.2
         })
     })
 })()

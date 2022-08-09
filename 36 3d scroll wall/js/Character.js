@@ -31,7 +31,7 @@ function Character(info) {
     this.scrollState = false
     this.lastScrollTop = 0
     this.xPos = info.xPos
-    this.speed = 0.3
+    this.speed = info.speed
     this.direction
     this.runningState = false
     this.rafId
@@ -79,6 +79,7 @@ Character.prototype = {
         window.addEventListener('keyup', function (e) {
             self.mainElem.classList.remove('running')
             this.cancelAnimationFrame(self.rafId)
+            self.runningState = false
         })
     },
     run: function (self) {
@@ -88,6 +89,10 @@ Character.prototype = {
         } else if (self.direction == 'right') {
             self.xPos += self.speed
         }
+
+        if (self.xPos < 2) self.xPos = 2
+        if (self.xPos > 88) self.xPos = 88
+
         self.mainElem.style.left = self.xPos + '%'
         self.rafId = requestAnimationFrame(function () {
             self.run(self)
