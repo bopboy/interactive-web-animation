@@ -222,3 +222,35 @@ body {
 .character-arm-left .face-back {
     background-image: url('../images/ilbuni_arm_0.png');
 }
+
+.character-leg-right {
+    left: calc(200 / 856 * 100%);
+    top: calc(1031 / 1334 * 100%);
+    width: calc(230 / 856 * 100%);
+    height: calc(300 / 1334 * 100%);
+    transform-origin: center top;
+}
+
+.character-leg-right .face-front {
+    background-image: url('../images/ilbuni_leg_0.png');
+}
+
+.character-leg-right .face-back {
+    background-image: url('../images/ilbuni_leg_1.png');
+}
+
+.character-leg-left {
+    left: calc(414 / 856 * 100%);
+    top: calc(1031 / 1334 * 100%);
+    width: calc(230 / 856 * 100%);
+    height: calc(300 / 1334 * 100%);
+    transform-origin: center top;
+}
+
+.character-leg-left .face-front {
+    background-image: url('../images/ilbuni_leg_1.png');
+}
+
+.character-leg-left .face-back {
+    background-image: url('../images/ilbuni_leg_0.png');
+}
