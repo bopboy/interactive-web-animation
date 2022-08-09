@@ -105,7 +105,7 @@ body {
     width: 10vw;
     height: 15.58vw;
     transform-style: preserve-3d;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .character[data-direction='forward'] {
@@ -163,7 +163,7 @@ body {
     height: calc(648 / 1334 * 100%);
     transform-origin: center bottom;
     animation: ani-head 0.6s infinite alternate cubic-bezier(0.46, 0.18, 0.66, 0.93);
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 .character-head-face.face-front {
